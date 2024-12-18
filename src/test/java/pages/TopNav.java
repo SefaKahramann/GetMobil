@@ -25,7 +25,7 @@ public class TopNav extends ReusableMethods {
     @FindBy(css = "button[data-testid='login-modal__continue-button']")
     public WebElement continueBtn;
 
-    @FindBy(xpath = "//div[text()='PROFİL']")
+    @FindBy(css = "[class='profilDropdownText ipad-hidden']")
     public WebElement profileBtn;
 
     @FindBy(css = "[class='GetmobilDesktopLogoContainer']")
