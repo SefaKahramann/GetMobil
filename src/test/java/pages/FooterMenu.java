@@ -11,6 +11,7 @@ public class FooterMenu {
     public FooterMenu() {
         PageFactory.initElements(GWD.driver,this);
     }
+
     @FindBy(css = "a[class='GMLink']")
     public List<WebElement> footerMenu;
 }
