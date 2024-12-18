@@ -17,7 +17,7 @@ public class ExtendReport extends AbstractTestNGCucumberTests {
         ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
         ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
         ExtentService.getInstance().setSystemInfo("User Name", "Sefa Kahraman");
-        ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
+        ExtentService.getInstance().setSystemInfo("Application Name", "GetMobil");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
         ExtentService.getInstance().setSystemInfo("Department", "QA");
     }
