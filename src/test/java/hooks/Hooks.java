@@ -12,7 +12,7 @@ public class Hooks {
     public void after(Scenario scenario) {
 
         if (scenario.isFailed()) {
-            TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
+            TakesScreenshot ts = ((TakesScreenshot) GWD.driver);
             byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(bytes, "image/png", "screenshot name");
         }

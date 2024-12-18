@@ -13,8 +13,8 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
-public class ReusableMethods {
-    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
+public class ReusableMethods extends GWD{
+    public WebDriverWait wait = new WebDriverWait(GWD.driver, Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
 
     public void myClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -30,11 +30,11 @@ public class ReusableMethods {
 
     public void hoverOver(WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
-        new Actions(GWD.getDriver()).moveToElement(element).perform();
+        new Actions(driver).moveToElement(element).perform();
     }
 
     public void scrollToElement(WebElement elements) {
-        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) GWD.driver;
         js.executeScript("arguments[0].scrollIntoView();", elements);
     }
 
@@ -56,18 +56,18 @@ public class ReusableMethods {
     public void verifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
-        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+        new Actions(GWD.driver).sendKeys(Keys.ESCAPE).build().perform();
     }
 
     public void verifyEqualsText(WebElement element,String value){
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().equals(value.toLowerCase()));
-        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+        new Actions(GWD.driver).sendKeys(Keys.ESCAPE).build().perform();
     }
 
     public void jsClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) GWD.driver;
         js.executeScript("arguments[0].click();", element);
     }
 
