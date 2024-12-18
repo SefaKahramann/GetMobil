@@ -10,7 +10,6 @@ public class Hooks {
 
     @After
     public void after(Scenario scenario) {
-
         if (scenario.isFailed()) {
             TakesScreenshot ts = ((TakesScreenshot) GWD.driver);
             byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);

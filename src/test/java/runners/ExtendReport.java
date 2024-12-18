@@ -10,6 +10,7 @@ import org.testng.annotations.AfterClass;
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
+
 public class ExtendReport extends AbstractTestNGCucumberTests {
     @AfterClass
     public  static void writeExtendReport()
