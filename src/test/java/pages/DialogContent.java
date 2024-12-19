@@ -31,6 +31,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//div[text()='Adres Bilgilerim']")
     public WebElement addressDetailsBtn;
 
+    @FindBy(xpath = "(//div[text()='Çıkış Yap'])[2]")
+    public WebElement logOutBtn;
+
     @FindBy(xpath = "//div[@role='alert']//button")
     public WebElement alertCloseBtn;
 
@@ -75,6 +78,7 @@ public class DialogContent extends ReusableMethods {
             case "userDetails": return this.userDetailsBtn;
             case "permissions": return this.permissionsBtn;
             case "addressDetails": return this.addressDetailsBtn;
+            case "logOut": return this.addressDetailsBtn;
         }
         return null;
     }

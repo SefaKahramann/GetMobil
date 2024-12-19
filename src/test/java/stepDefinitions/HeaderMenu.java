@@ -35,20 +35,20 @@ public class HeaderMenu {
         }
     }
 
-    @When("The user clicks the Store button and verifies they are redirected to the page")
-    public void theUserClicksTheStoreButtonAndVerifiesTheyAreRedirectedToThePage() {
-        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.storesBtn));
-        topNav.myClick(topNav.storesBtn);
-        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.pageVerify));
-        topNav.verifyContainsText(topNav.pageVerify, "Mağazalarımız");
-    }
-
     @Then("The user clicks the Sell Phone button and verifies they are redirected to the page")
     public void theUserClicksTheSellPhoneButtonAndVerifiesTheyAreRedirectedToThePage() {
         topNav.wait.until(ExpectedConditions.visibilityOf(topNav.buyBackBtn));
         topNav.myClick(topNav.buyBackBtn);
         topNav.wait.until(ExpectedConditions.visibilityOf(topNav.pageVerify));
         topNav.verifyContainsText(topNav.pageVerify, "Telefon Sat");
+    }
+
+    @When("The user clicks the Store button and verifies they are redirected to the page")
+    public void theUserClicksTheStoreButtonAndVerifiesTheyAreRedirectedToThePage() {
+        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.storesBtn));
+        topNav.myClick(topNav.storesBtn);
+        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.pageVerify));
+        topNav.verifyContainsText(topNav.pageVerify, "Mağazalarımız");
     }
 
     @And("The user clicks the Franchise button and verifies they are redirected to the page")

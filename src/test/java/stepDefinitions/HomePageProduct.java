@@ -11,12 +11,12 @@ public class HomePageProduct {
     double discountPrice;
     String homepageProductName;
 
-    @When("The user clicks on a random product from the Homepage")
+    @When("The user clicks on a first product from the Homepage")
     public void theUserClicksOnARandomProductFromTheHomepage() {
        dialogContent.wait.until(ExpectedConditions.visibilityOf(dialogContent.homePageProductFirst));
        productDiscount=Integer.parseInt(dialogContent.productDiscount.getText().replaceAll("%","").trim());
        dialogContent.scrollToElement(dialogContent.homePageProductFirst);
-        homepageProductName=dialogContent.homepageProductFirstName.getText();
+       homepageProductName=dialogContent.homepageProductFirstName.getText();
        dialogContent.myClick(dialogContent.homePageProductFirst);
     }
 

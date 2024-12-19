@@ -13,6 +13,9 @@ public class FooterMenu extends ReusableMethods {
         PageFactory.initElements(GWD.driver,this);
     }
 
+    @FindBy(xpath = "//p[text()='Yenilenmiş Cep Telefonları']")
+    public WebElement renewedPhoneLink;
+
     @FindBy(xpath = "(//div[@class='container-fluid container-xl'])[1]")
     public WebElement scrollFooter;
 

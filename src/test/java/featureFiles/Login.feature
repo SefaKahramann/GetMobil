@@ -14,3 +14,4 @@ Feature:Login and Profile Functionality
       | userDetails    |
       | permissions    |
       | addressDetails |
+      | logOut         |

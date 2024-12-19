@@ -26,6 +26,10 @@ public class FooterMenuFunc {
     @Then("The user verifies all links in the Footer menu by clicking on all buttons")
     public void theUserVerifiesAllLinksInTheFooterMenuByClickingOnAllButtons() {
 
+        footerMenu.wait.until(ExpectedConditions.visibilityOf(footerMenu.renewedPhoneLink));
+        footerMenu.jsClick(footerMenu.renewedPhoneLink);
+        footerMenu.scrollToElement(footerMenu.renewedPhoneLink);
+
         List<String> brands = new ArrayList<>();
         for (int i = 0; i < footerMenu.brands.size(); i++) {
             Collections.addAll(brands, footerMenu.brands.get(i).getText());
