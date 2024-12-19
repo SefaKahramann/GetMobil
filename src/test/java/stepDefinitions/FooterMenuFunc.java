@@ -28,6 +28,8 @@ public class FooterMenuFunc {
 
         footerMenu.wait.until(ExpectedConditions.visibilityOf(footerMenu.renewedPhoneLink));
         footerMenu.jsClick(footerMenu.renewedPhoneLink);
+        Assert.assertTrue(GWD.getDriver().getCurrentUrl().contains("cep-telefonu"));
+        GWD.getDriver().navigate().back();
         footerMenu.scrollToElement(footerMenu.renewedPhoneLink);
 
         List<String> brands = new ArrayList<>();

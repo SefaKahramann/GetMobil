@@ -53,7 +53,7 @@ public class Login {
     @Then("The user clicks on the Left nav elements and verifies each options")
     public void theUserClicksOnTheLeftnavElementsAndVerifiesEachOptions(DataTable dtBtn) {
         List<String> links=new ArrayList<>();
-        Collections.addAll(links,"sattiklarim","begendiklerim","kullanici-bilgilerim","iletisim-izinlerim","adreslerim");
+        Collections.addAll(links,"sattiklarim","begendiklerim","kullanici-bilgilerim","iletisim-izinlerim","adreslerim",ConfigReader.getProperty("URL"));
 
         List<String> buttons=dtBtn.asList(String.class);
         for (int i = 0; i < buttons.size(); i++) {
