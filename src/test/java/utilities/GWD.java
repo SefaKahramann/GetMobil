@@ -17,7 +17,7 @@ public class GWD {
 
         if (driver == null) {
             switch (ConfigReader.getProperty("browser")) {
-                case "Chrome":
+                case "chrome":
                     driver = new ChromeDriver();
                     break;
                 case "firefox":
