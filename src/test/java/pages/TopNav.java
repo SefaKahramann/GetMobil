@@ -50,5 +50,14 @@ public class TopNav extends ReusableMethods {
     public WebElement searchBox;
 
     @FindBy(css = "span[data-testid='search-list-phone-name']")
-    public WebElement phoneName;
+    public List<WebElement> phoneName;
+
+    @FindBy(css = "span[class='breadcrumbs-links']")
+    public WebElement pageVerify;
+
+    @FindBy(xpath = "//a[contains(@class,'MenuItemDesktopText')]")
+    public WebElement headerMenuVerifies;
+
+    @FindBy(xpath = "//div[@class='customBasketHeader']//i")
+    public WebElement backBtn;
 }

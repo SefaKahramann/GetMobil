@@ -64,6 +64,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(css = "[class='product-card__discount']")
     public WebElement productDiscount;
 
+    @FindBy(css = "[class='customBasketHeaderTitleText']")
+    public WebElement basketPageVerify;
+
     public WebElement getWebElement(String strElementName) {
 
         switch (strElementName) {

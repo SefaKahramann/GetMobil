@@ -26,7 +26,7 @@ public class Login {
         topNav.myClick(topNav.loginBtn);
 
         topNav.wait.until(ExpectedConditions.visibilityOf(topNav.inputPhoneNumber));
-        topNav.mySendKeys(topNav.inputPhoneNumber, "5330407395");
+        topNav.mySendKeys(topNav.inputPhoneNumber,ConfigReader.getProperty("phoneNumber"));
         topNav.myClick(topNav.continueBtn);
     }
 
