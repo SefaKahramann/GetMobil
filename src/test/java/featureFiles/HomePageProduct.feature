@@ -1,6 +1,6 @@
-Feature:
+Feature:Homepage Product Functionality
 
-  Scenario:
+  Scenario:Homepage Product Functionality
     Given The user navigate to Getmobil
     When The user clicks on a random product from the Homepage
     And The user clicks on the add to card button
