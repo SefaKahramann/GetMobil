@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class DialogContent extends ReusableMethods {
     public DialogContent() {
         PageFactory.initElements(GWD.driver,this);
@@ -31,6 +33,36 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//div[@role='alert']//button")
     public WebElement alertCloseBtn;
+
+    @FindBy(xpath = "(//div[@class='product-card__top aspect-desktop'])[1]")
+    public WebElement homePageProductFirst;
+
+    @FindBy(xpath = "(//div[@class='mantine-Text-root mantine-gursce'])[1]")
+    public WebElement homepageProductFirstName;
+
+    @FindBy(css = "[data-testid='product-detail__sell-base-price']")
+    public WebElement productOldPrice;
+
+    @FindBy(css = "[data-testid='product-detail__price']")
+    public WebElement productNewPrice;
+
+    @FindBy(css = "[data-testid='product-detail__add-to-cart-desktop-button']")
+    public WebElement addToCardBtn;
+
+    @FindBy(xpath = "//div[text()='Sepete eklendi']")
+    public WebElement addToCardControl;
+
+    @FindBy(css = "[data-testid='header__my-basket']")
+    public WebElement headerMyAddToCardIcon;
+
+    @FindBy(css = "[data-testid='basket__total-price']")
+    public WebElement basketTotalPrice;
+
+    @FindBy(xpath = "//div[contains(@class,'mantine-Text-root fz-big')]")
+    public WebElement basketProductName;
+
+    @FindBy(css = "[class='product-card__discount']")
+    public WebElement productDiscount;
 
     public WebElement getWebElement(String strElementName) {
 

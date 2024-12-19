@@ -2,8 +2,6 @@ package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.DialogContent;
 import pages.TopNav;
@@ -15,8 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Login {
-    TopNav topNavElement=new TopNav();
-    DialogContent dialogContentElement=new DialogContent();
+    TopNav topNav =new TopNav();
+    DialogContent dialogContent =new DialogContent();
 
     @Given("The user navigate to Getmobil")
     public void theUserNavigateToGetmobil() {
@@ -25,31 +23,31 @@ public class Login {
 
     @When("The user clicks on the Login button and types phone number")
     public void theUserTypesPhoneNumber() {
-        topNavElement.myClick(topNavElement.loginBtn);
+        topNav.myClick(topNav.loginBtn);
 
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.inputPhoneNumber));
-        topNavElement.mySendKeys(topNavElement.inputPhoneNumber, "5330407395");
-        topNavElement.myClick(topNavElement.continueBtn);
+        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.inputPhoneNumber));
+        topNav.mySendKeys(topNav.inputPhoneNumber, "5330407395");
+        topNav.myClick(topNav.continueBtn);
     }
 
     @Then("The user verifies login successfully")
     public void theUserVerifiesLoginSuccessfully() {
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.longinControl));
-        topNavElement.verifyContainsText(topNavElement.longinControl, "Giriş Yaptınız");
-        dialogContentElement.myClick(dialogContentElement.alertCloseBtn);
+        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.longinControl));
+        topNav.verifyContainsText(topNav.longinControl, "Giriş Yaptınız");
+        dialogContent.myClick(dialogContent.alertCloseBtn);
     }
 
     @Given("The user hovers over the Profile button and displays profile dropdown menu")
     public void theUserHoversoverTheProfileButtonAndDisplaysProfileDropdownMenu() {
-        topNavElement.wait.until(ExpectedConditions.visibilityOf(topNavElement.profileBtn));
-        topNavElement.hoverOver(topNavElement.profileBtn);
-        dialogContentElement.wait.until(ExpectedConditions.visibilityOf(dialogContentElement.orderBtn));
+        topNav.wait.until(ExpectedConditions.visibilityOf(topNav.profileBtn));
+        topNav.hoverOver(topNav.profileBtn);
+        dialogContent.wait.until(ExpectedConditions.visibilityOf(dialogContent.orderBtn));
     }
 
     @When("The user clicks on the Orders button")
     public void theUserClicksOnTheOrdersButton() {
-        dialogContentElement.myClick(dialogContentElement.orderBtn);
-        dialogContentElement.wait.until(ExpectedConditions.urlContains("aldiklarim"));
+        dialogContent.myClick(dialogContent.orderBtn);
+        dialogContent.wait.until(ExpectedConditions.urlContains("aldiklarim"));
     }
 
     @Then("The user clicks on the Left nav elements and verifies each options")
@@ -59,10 +57,10 @@ public class Login {
 
         List<String> buttons=dtBtn.asList(String.class);
         for (int i = 0; i < buttons.size(); i++) {
-            dialogContentElement.myClick(dialogContentElement.getWebElement(buttons.get(i)));
-            dialogContentElement.wait.until(ExpectedConditions.urlContains(links.get(i)));
-            dialogContentElement.wait.until(ExpectedConditions
-                    .visibilityOfAllElements(dialogContentElement.getWebElement(buttons.get(i))));
+            dialogContent.myClick(dialogContent.getWebElement(buttons.get(i)));
+            dialogContent.wait.until(ExpectedConditions.urlContains(links.get(i)));
+            dialogContent.wait.until(ExpectedConditions
+                    .visibilityOfAllElements(dialogContent.getWebElement(buttons.get(i))));
         }
     }
 }
