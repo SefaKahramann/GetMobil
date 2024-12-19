@@ -102,7 +102,7 @@ public class FooterMenuFunc {
         }
 
         List<String> application = new ArrayList<>();
-        Collections.addAll(application,"bayilik","bayilik","kariyer");
+        Collections.addAll(application,"bayilik","bayilik","bayilik","kariyer");
         for (int i = 0; i < footerMenu.application.size(); i++) {
             footerMenu.wait.until(ExpectedConditions.visibilityOfAllElements(footerMenu.application.get(i)));
             footerMenu.jsClick(footerMenu.application.get(i));
@@ -127,7 +127,7 @@ public class FooterMenuFunc {
 
         List<String> other = new ArrayList<>();
         Collections.addAll(other,"kullanim-kosullari","garanti-kosullari","aydinlatma-metni",
-                "acik-riza-metni","on-bilgilendirme-formu","blog" );
+                "acik-riza-metni","on-bilgilendirme-formu","blog","giris-yap" );
 
         for (int i = 0; i < footerMenu.other.size(); i++) {
             footerMenu.wait.until(ExpectedConditions.visibilityOfAllElements(footerMenu.other.get(i)));
@@ -150,6 +150,5 @@ public class FooterMenuFunc {
             GWD.getDriver().navigate().back();
             footerMenu.scrollToElement(footerMenu.support.get(i));
         }
-        topNav.myClick(topNav.logoBtn);
     }
 }
