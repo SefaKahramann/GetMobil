@@ -78,7 +78,7 @@ public class DialogContent extends ReusableMethods {
             case "userDetails": return this.userDetailsBtn;
             case "permissions": return this.permissionsBtn;
             case "addressDetails": return this.addressDetailsBtn;
-            case "logOut": return this.addressDetailsBtn;
+            case "logOut": return this.logOutBtn;
         }
         return null;
     }
